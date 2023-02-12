@@ -1,0 +1,64 @@
+// The class Movie is stated below. An instance of class Movie represents a film. This class has the following three properties:
+
+// title, which is a String representing the title of the movie
+// studio, which is a String representing the studio that made the movie
+// rating, which is a String representing the rating of the movie (i.e. PG­13, R, etc)
+// a) Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing the studio, and a String representing the rating as its arguments, and sets the respective class properties to these values.
+
+// b) The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+
+// c) Write a method getPG, which takes an array of base type Movie as its argument, and returns a new array of only those movies in the input array with a rating of "PG". You may assume the input array is full of Movie instances. The returned array need not be full.
+
+// d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13”
+
+class Movie{
+  constructor(title,studio,rating="PG"){
+  this.title=title
+  this.studio=studio
+  this.rating=rating
+  }
+  getpG(movie){
+  return movie.filter(a=>a.rating==="PG")
+  }
+  }
+  
+  let Movie_1=new Movie( "Casino Royale","Eon Productions","PG13")
+  let Movie_2=new Movie( "Avatar_1","EROS","PG")
+  let Movie_3=new Movie( "Avatar_2","EROS","R")
+  let Movie_4=new Movie( "Ironman","Marvel","PG13")
+  let Movie_5=new Movie( "Thor","Marvel","PG")
+  let Movie_6=new Movie( "Singam","sunpicture","R")
+  let Movie_7=new Movie( "Singam-2 Royale","Sunpicture","PG")
+  const movieArray=[Movie_1,Movie_2,Movie_3,Movie_4,Movie_5,Movie_6,Movie_7]
+  console.log(Movie_1.getpG(movieArray))
+
+  // Write a “person” class to hold all the details.
+  class person {
+    constructor(name,age,sex,mobileNo){
+    this.name=name
+    this.age=age
+    this.sex=sex
+    this.mobilenNo=mobilenNo
+    }
+    
+    }
+    
+    let sarav=new person( "Saravaneshwaran",24,"Male",1111000101)
+    console.log(sarav)
+
+    // write a class to calculate the uber price
+
+    class Uber {
+      constructor(baseFare, perMinuteRate, perMileRate) {
+        this.baseFare = baseFare;
+        this.perMinuteRate = perMinuteRate;
+        this.perMileRate = perMileRate;
+      }
+    
+      calculatePrice(duration, distance) {
+        return this.baseFare + duration * this.perMinuteRate + distance * this.perMileRate;
+      }
+    }
+    const UberX = new Uber(5, 1, 2);
+    const price = UberX.calculatePrice(30, 10);
+    console.log(price);
